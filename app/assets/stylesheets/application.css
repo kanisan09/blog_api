@@ -52,15 +52,35 @@ table{
 }
 
 .new{
-    border: 2px solid rgb(206, 109, 109);
     margin: 0 auto;
     width: 700px;
     padding: 20px;
+    background-color:rgb(249, 214, 214) ;
 }
 
 .new textarea{
     width: 600px; 
     height: 200px; 
-    resize: none;
+    resize: vertical;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.content{
+    margin: 20px;
+}
+
+.input-title {
+    width: 500px; 
+    padding: 8px; 
+    border: 1px solid #ccc;
+    font-size: 16px; 
+}
+
+.btn{
+    border: solid 3px #fd2323;
+    padding: 16px 72px;
+    background-color: white;
+    margin: 10px;
 }
 
