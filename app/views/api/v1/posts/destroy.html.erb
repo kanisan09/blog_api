@@ -1,0 +1,14 @@
+<% if notice %>
+<p class="notice"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+<p class="alert"><%= alert%></p>
+<% end %>
+
+<% @posts.each do |post|%>
+<%= post.title %>
+<%= form_with(model: post, url: api_v1_post_path(post), method: :delete) do |form| %>
+<%= form.submit '削除', data: { confirm: '本当に削除しますか？'} %>
+<% end %>
+<% end %>

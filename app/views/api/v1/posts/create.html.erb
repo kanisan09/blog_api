@@ -1,0 +1,13 @@
+<h1>新規投稿</h1>
+
+<%= if @post.errors.any? %>
+<div id = "error_explanation">
+    <h2><%= pliralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+        <% @post.error.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+<div>
+<% end %>

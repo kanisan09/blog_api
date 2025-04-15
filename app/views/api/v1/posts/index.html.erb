@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ルビーのブログ</title>
+</head>
+<body>
+<h1>rails初心者ブログ</h1>
+<div class="sinki-btn"><%= link_to '新規投稿', new_api_v1_post_path %></div>
+<table>
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>内容</th>
+            <th>画像</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <% @posts.each do |post|%>
+    <tr>
+        <td><%= post.title %></td>
+        <td><%= post.content.truncate(20) %></td>
+        <td>
+            <% if post.image.attached? %>
+            <%= image_tag post.image, size: "100x100" %>
+            <% else %>
+            <p>(no image)</p>
+            <% end %>
+        </td>
+        <td><%= link_to '詳細', api_v1_post_path(post) %></td>
+        <td><%= link_to '編集', edit_api_v1_post_path(post) %></td>
+        <td>
+            <%= form_with(model: post, url: api_v1_post_path(post), method: :delete) do |form| %>
+            <%= form.submit '削除', data: { confirm: '本当に削除しますか？'} %>
+            <% end %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+
+<br>
+
+</body>
+</html>

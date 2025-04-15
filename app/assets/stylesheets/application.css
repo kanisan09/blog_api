@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+body{
+    text-align: center;
+}
+
+h1{
+    background-color: rgb(215, 28, 28);
+    color: white;
+    padding: 35px;
+    margin: 0 250px 30px 250px;
+}
+
+table{
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid rgb(206, 109, 109);
+}
+
+.sinki-btn{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: [object object];
+    background-image: linear-gradient(190deg, rgb(222, 63, 63) 15%, rgba(243, 61, 95, 0.44));
+}
+.sinki-btn a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sinki-btn:hover{
+    opacity: .5;
+}
+
+.new{
+    border: 2px solid rgb(206, 109, 109);
+    margin: 0 auto;
+    width: 700px;
+    padding: 20px;
+}
+
+.new textarea{
+    width: 600px; 
+    height: 200px; 
+    resize: none;
+}
+
