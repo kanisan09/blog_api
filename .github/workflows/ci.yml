@@ -18,8 +18,20 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: brakeman を実行可能にする
+      - name: カレントディレクトリを確認
+        run: pwd
+
+      - name: bin ディレクトリの内容を確認
+        run: ls -l bin
+
+      - name: brakeman ファイルの権限を確認
+        run: ls -l bin/brakeman
+
+      - name: brakeman を実行可能にする (念のため)
         run: chmod +x bin/brakeman
+
+      - name: brakeman ファイルの権限を再確認
+        run: ls -l bin/brakeman
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
